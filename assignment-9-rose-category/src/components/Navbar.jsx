@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import MyLink from "./MyLink";
 
 const Navbar = () => {
@@ -40,7 +40,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost lg:text-xl flex flex-col items-center gap-0 lg:flex-row lg:gap-2">
+            <img
+              src="/logo.png"
+              alt=""
+              className="w-18 h-8 lg:w-[94px] lg:h-[46px]"
+            />
+            <span className="text-[#F19020] italic">Warm Paws</span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -87,6 +94,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          <Link to={"/login"} className="btn">
+            Button
+          </Link>
         </div>
       </div>
     </div>
