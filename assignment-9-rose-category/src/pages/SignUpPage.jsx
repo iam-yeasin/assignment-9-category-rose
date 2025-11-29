@@ -1,35 +1,145 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./../firebase/firebase.config";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const SignUpPage = () => {
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handlesighup = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ name, photo, email, password });
+
+    // ^.{6,}$
+    // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!passwordPattern.test(password)) {
+      console.log("pass didn't match");
+      setError("pass must be 6 charecthere or longer");
+      return;
+    }
+
+    // reset status success or error
+    setError("");
+    setSuccess(false);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result.user);
+        setSuccess(true);
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
+
+  const handleShowPasswordToggle = (e) => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="flex justify-center min-h-screen items-center">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
         <h2 className="font-semibold text-2xl text-center">
           Signup Your Account
         </h2>
-        <div className="card-body">
+        <form onSubmit={handlesighup} className="card-body">
           <fieldset className="fieldset">
+            {/* Name */}
             <label className="label">Name</label>
-            <input type="text" className="input" placeholder="Name" />
+            <div className="relative w-full">
+              <input
+                name="name"
+                type="text"
+                className="input input-bordered w-full pr-10 
+               focus:outline-none focus:ring-0 focus-visible:outline-none"
+                placeholder="Name"
+                required
+              />
+            </div>
+
+            {/* Photo */}
             <label className="label">Photo URL</label>
-            <input type="text" className="input" placeholder="Photo URL" />
+            <div className="relative w-full">
+              <input
+                name="photo"
+                type="text"
+                className="input input-bordered w-full pr-10 
+               focus:outline-none focus:ring-0 focus-visible:outline-none"
+                placeholder="Photo URL"
+                required
+              />
+            </div>
+
+            {/* Email */}
             <label className="label">Email</label>
-            <input type="email" className="input" placeholder="Email" />
+            <div className="relative w-full">
+              <input
+                name="email"
+                type="email"
+                className="input input-bordered w-full pr-10 
+               focus:outline-none focus:ring-0 focus-visible:outline-none"
+                placeholder="Email"
+                required
+              />
+            </div>
+            {/* Password */}
             <label className="label">Password</label>
-            <input type="password" className="input" placeholder="Password" />
+
+            <div className="relative w-full">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                className="input input-bordered w-full pr-12 focus:outline-none focus:ring-0"
+                placeholder="Password"
+                required
+              />
+
+              {/* Toggle Icon */}
+              <button
+                type="button"
+                onClick={handleShowPasswordToggle}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-0 bg-transparent border-none outline-none cursor-pointer"
+              >
+                <span className="text-xl">
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </button>
+            </div>
+
             <div>
               {/* <a className="link link-hover">Forgot password?</a> */}
             </div>
-            <button className="btn btn-neutral mt-4">Signup</button>
+            <button type="submit" className="btn btn-neutral mt-4">
+              Signup
+            </button>
             <p className="font-semibold text-center pt-5">
               Already Have An Account?{" "}
               <Link className="text-pink-600" to={"/login"}>
                 Login
               </Link>
             </p>
+            {success && (
+              <p className="text-green-700 text-center">
+                account create successfully
+              </p>
+            )}
+            {error && <p className="text-red-700 text-center">{error}</p>}
           </fieldset>
-        </div>
+        </form>
       </div>
     </div>
   );
