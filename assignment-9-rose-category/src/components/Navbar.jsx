@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
 import MyLink from "./MyLink";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Signout Successful");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm">
@@ -63,25 +86,57 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
+          {user ? (
+            <div className="dropdown dropdown-end relative">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar relative group"
+              >
+                {/* HOVER */}
+                <div
+                  className="pointer-events-none absolute right-full mr-2 top-1/2 -translate-y-1/2
+                   flex flex-col justify-center
+                   bg-white text-black rounded-md
+                   px-2 h-16
+                   wrap-break-word
+                   opacity-0 group-hover:opacity-100
+                   transition-opacity duration-150"
+                >
+                  <h3 className="text-[11px] font-medium leading-none pb-2">
+                    <span>
+                      Hi <br />
+                    </span>
+                    {user.email || "Unknown User"}
+                  </h3>
+
+                  {/* next feature */}
+                  {/* <p className="text-[10px] leading-none opacity-90">
+                  Click to see more
+                </p> */}
+                </div>
+
+                {/* AVATAR */}
+                <div className="w-10 h-10 rounded-full overflow-hidden">
+                  <img
+                    alt="User avatar"
+                    src={
+                      user.photoURL ||
+                      "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    }
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+
+              {/* next feature*/}
+              {/* DROPDOWN */}
+              {/* <ul
+              tabIndex={-1}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a className="justify-between">Name</a>
+                <a>Name</a>
               </li>
               <li>
                 <a>Email Address</a>
@@ -92,11 +147,21 @@ const Navbar = () => {
               <li>
                 <a>Logout</a>
               </li>
-            </ul>
+            </ul> */}
+            </div>
+          ) : null}
+
+          <div>
+            {user ? (
+              <button className="btn ml-5 mr-5" onClick={handleLogout}>
+                Sign Out
+              </button>
+            ) : (
+              <Link to="/login" className="btn ml-5 mr-5">
+                Login
+              </Link>
+            )}
           </div>
-          <Link to={"/login"} className="btn">
-            Login
-          </Link>
         </div>
       </div>
     </div>

@@ -7,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBk_CXjYe_y794fG1_x-tFilumxWK1YAjQ",
-  authDomain: "warm-paws-96023.firebaseapp.com",
-  projectId: "warm-paws-96023",
-  storageBucket: "warm-paws-96023.firebasestorage.app",
-  messagingSenderId: "1052063350610",
-  appId: "1:1052063350610:web:e214c8e291f13791b2048b",
+  apiKey: "AIzaSyCkgyMs-hOAtv7mTRF12fod2CbOSKhU_Jk",
+  authDomain: "petwarmpaw.firebaseapp.com",
+  projectId: "petwarmpaw",
+  storageBucket: "petwarmpaw.firebasestorage.app",
+  messagingSenderId: "120200224658",
+  appId: "1:120200224658:web:92c03a17e0f290153a2b4b"
 };
 
 // Initialize Firebase

@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const [success, setSuccess] = useState(false);
@@ -22,10 +23,12 @@ const SignUpPage = () => {
 
     // ^.{6,}$
     // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/
-    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    // const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    const passwordPattern = /^.{6,}$/;
     if (!passwordPattern.test(password)) {
       console.log("pass didn't match");
-      setError("pass must be 6 charecthere or longer");
+      setError("Password must be at least 6 characters long");
+      toast.error("Password must be at least 6 characters long");
       return;
     }
 
@@ -38,10 +41,12 @@ const SignUpPage = () => {
         console.log(result.user);
         setSuccess(true);
         e.target.reset();
+        toast.success("Signup Sucessful");
       })
       .catch((error) => {
         console.log(error);
         setError(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -124,7 +129,7 @@ const SignUpPage = () => {
               {/* <a className="link link-hover">Forgot password?</a> */}
             </div>
             <button type="submit" className="btn btn-neutral mt-4">
-              Signup
+              Sign Up
             </button>
             <p className="font-semibold text-center pt-5">
               Already Have An Account?{" "}

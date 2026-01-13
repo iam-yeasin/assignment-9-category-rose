@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const LogInPage = () => {
   const [error, setError] = useState("");
@@ -23,11 +24,13 @@ const LogInPage = () => {
       .then((result) => {
         console.log("Logged in:", result.user);
         setSuccess(true);
+        toast.success("Login Successful!");
         form.reset();
       })
       .catch((err) => {
         console.error(err);
         setError(err.message);
+        toast.error("Something went wrong please try again later!");
       });
   };
 
@@ -96,7 +99,11 @@ const LogInPage = () => {
             {success && (
               <p className="text-green-700 text-center">Login Successful!</p>
             )}
-            {error && <p className="text-red-700 text-center">{error}</p>}
+            {error && (
+              <p className="text-red-700 text-center">
+                Something went wrong please try again later!
+              </p>
+            )}
           </fieldset>
         </form>
       </div>
