@@ -107,7 +107,7 @@ const Navbar = () => {
                     <span>
                       Hi <br />
                     </span>
-                    {user.email || "Unknown User"}
+                    {user.displayName || user.email}
                   </h3>
 
                   {/* next feature */}

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+
+const googleProvider = new GoogleAuthProvider();
 
 const LogInPage = () => {
   const [error, setError] = useState("");
@@ -26,6 +32,20 @@ const LogInPage = () => {
         setSuccess(true);
         toast.success("Login Successful!");
         form.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(err.message);
+        toast.error("Something went wrong please try again later!");
+      });
+  };
+
+  const handleGoogleSignin = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        console.log("Logged in:", result.user);
+        setSuccess(true);
+        toast.success("Login Successful!");
       })
       .catch((err) => {
         console.error(err);
@@ -86,6 +106,28 @@ const LogInPage = () => {
 
             <button type="submit" className="btn btn-neutral mt-4">
               Login
+            </button>
+
+            {/* Divider */}
+            <div className="flex items-center justify-center gap-2 my-2">
+              <div className="h-px w-16 bg-gray-300"></div>
+              <span className="text-smtext-white/70">or</span>
+              <div className="h-px w-16 bg-gray-300"></div>
+            </div>
+            {/* Google Signin */}
+            <button
+              type="button"
+              onClick={handleGoogleSignin}
+              className="flex items-center justify-center gap-3 rounded-sm cursor-pointer bg-black
+            text-white px-5 py-2 rounded-1g w-full font-semibold
+            hover:bg-pink-950 transition-colors"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="google"
+                className="w-5 h-5"
+              />
+              Continue with Google
             </button>
 
             <p className="font-semibold text-center pt-5">
