@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
@@ -15,6 +15,10 @@ const LogInPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,6 +36,7 @@ const LogInPage = () => {
         setSuccess(true);
         toast.success("Login Successful!");
         form.reset();
+        navigate(location.state || "/");
       })
       .catch((err) => {
         console.error(err);
@@ -46,6 +51,7 @@ const LogInPage = () => {
         console.log("Logged in:", result.user);
         setSuccess(true);
         toast.success("Login Successful!");
+        navigate(location.state || "/");
       })
       .catch((err) => {
         console.error(err);

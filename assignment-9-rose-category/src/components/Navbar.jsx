@@ -121,9 +121,8 @@ const Navbar = () => {
                   <img
                     alt="User avatar"
                     src={
-                      user
-                        ? user.photoURL
-                        : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                      user.photoURL ||
+                      "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                     }
                     className="w-full h-full object-cover"
                   />
