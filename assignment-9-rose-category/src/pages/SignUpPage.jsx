@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye } from "react-icons/fa";
@@ -10,6 +10,8 @@ const SignUpPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handlesighup = (e) => {
     e.preventDefault();
@@ -42,6 +44,7 @@ const SignUpPage = () => {
         setSuccess(true);
         e.target.reset();
         toast.success("Signup Sucessful");
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error);

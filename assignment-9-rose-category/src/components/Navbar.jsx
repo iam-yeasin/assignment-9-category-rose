@@ -7,10 +7,12 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -152,7 +154,9 @@ const Navbar = () => {
           ) : null}
 
           <div>
-            {user ? (
+            {loading ? (
+              <span className="loading loading-spinner text-black"></span>
+            ) : user ? (
               <button className="btn ml-5 mr-5" onClick={handleLogout}>
                 Sign Out
               </button>

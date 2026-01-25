@@ -9,12 +9,11 @@ import { auth } from "./../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const googleProvider = new GoogleAuthProvider();
-
 const LogInPage = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -60,6 +59,11 @@ const LogInPage = () => {
       });
   };
 
+  const googleProvider = new GoogleAuthProvider();
+  googleProvider.setCustomParameters({
+    prompt: "select_account",
+  });
+
   const handleShowPasswordToggle = () => {
     setShowPassword(!showPassword);
   };
@@ -78,6 +82,8 @@ const LogInPage = () => {
             <input
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="input input-bordered w-full pr-10 
                focus:outline-none focus:ring-0 focus-visible:outline-none"
               placeholder="Email"
@@ -107,7 +113,15 @@ const LogInPage = () => {
             </div>
 
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <button
+                type="button"
+                onClick={() =>
+                  navigate("/forgot-password", { state: { email } })
+                }
+                className="link link-hover text-left"
+              >
+                Forgot password?
+              </button>
             </div>
 
             <button type="submit" className="btn btn-neutral mt-4">

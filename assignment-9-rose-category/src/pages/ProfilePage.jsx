@@ -17,6 +17,7 @@ const ProfilePage = () => {
       setLoading(false);
     });
 
+    // Listens for Firebase auth changes and updates user state
     return () => unsubscribe();
   }, []);
 
@@ -38,6 +39,7 @@ const ProfilePage = () => {
       await auth.currentUser.reload();
 
       toast.success("Profile updated successfully");
+      window.location.reload();
 
       // update avatar
       setUser({ ...auth.currentUser });
@@ -47,7 +49,9 @@ const ProfilePage = () => {
   };
 
   if (loading) {
-    return <span className="loading loading-spinner text-success"></span>;
+    return (
+      <span className="loading loading-spinner text-black mx-auto block"></span>
+    );
   }
 
   if (!user) {
