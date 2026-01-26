@@ -1,9 +1,11 @@
 import React from "react";
+import HeroSlider from "../components/HeroSlider";
 
 const HomePage = () => {
   return (
     <div>
-      <h1 className="text-2xl text-red-800">Home</h1>
+      {/* Hero Slider Section */}
+      <HeroSlider />
     </div>
   );
 };
