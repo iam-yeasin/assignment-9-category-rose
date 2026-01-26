@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import MyLink from "./MyLink";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -123,7 +123,7 @@ const Navbar = () => {
                   <img
                     alt="User avatar"
                     src={
-                      user.photoURL ||
+                      user?.photoURL ||
                       "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                     }
                     className="w-full h-full object-cover"

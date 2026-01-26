@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
 import { updateProfile, onAuthStateChanged } from "firebase/auth";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { Navigate, useLocation } from "react-router";
 
 const ProfilePage = () => {
@@ -67,7 +67,7 @@ const ProfilePage = () => {
         <img
           alt="User avatar"
           src={
-            user.photoURL ||
+            user?.photoURL ||
             "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           }
           className="w-full h-full object-cover"

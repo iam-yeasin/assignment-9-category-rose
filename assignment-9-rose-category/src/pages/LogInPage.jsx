@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import {
   GoogleAuthProvider,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const LogInPage = () => {
   const [error, setError] = useState("");
@@ -18,6 +19,15 @@ const LogInPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        navigate("/", { replace: true });
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
