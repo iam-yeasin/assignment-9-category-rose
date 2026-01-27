@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/NjN6HWR5/Winter_Coat_Fitting_for_Dogs.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.postimg.cc/4x4vnJHK/Winter_Grooming_Paw_Treatment.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Boarding",
+    "providerName": "WarmPaws Care",
+    "providerEmail": "contact@warmpaws.com",
+    "price": 50,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Safe, heated boarding facility for pets during cold weather.",
+    "image": "https://i.postimg.cc/9QXPzWwz/Heated_Pet_Boarding.png",
+    "category": "Boarding"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Vet Checkup",
+    "providerName": "Healthy Tails Vet",
+    "providerEmail": "support@healthytails.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 6,
+    "description": "Full winter health check including cold-related illness prevention.",
+    "image": "https://i.postimg.cc/L84khHgY/Winter_Vet_Checkup.png",
+    "category": "Health"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Pet Winter Training Program",
+    "providerName": "SnowPaws Training",
+    "providerEmail": "train@snowpaws.com",
+    "price": 35,
+    "rating": 4.6,
+    "slotsAvailable": 8,
+    "description": "Indoor behavioral training sessions to keep pets active in winter.",
+    "image": "https://i.postimg.cc/y86hWV3d/Pet_Winter_Training_Program.png",
+    "category": "Training"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Emergency Winter Pet Care",
+    "providerName": "24/7 Pet Rescue",
+    "providerEmail": "help@petrescue.com",
+    "price": 60,
+    "rating": 4.8,
+    "slotsAvailable": 2,
+    "description": "Emergency winter care for pets affected by extreme cold conditions.",
+    "image": "https://i.postimg.cc/Hs94pJnG/Emergency_Winter_Pet_Care.png",
+    "category": "Emergency"
+  }
+]
