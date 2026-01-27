@@ -1,0 +1,110 @@
+[
+  {
+    "serviceId": 11,
+    "serviceName": "Bathing & Drying",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Gentle bathing and blow-dry service to keep your pet clean, fresh, and comfortable.",
+    "image": "https://i.postimg.cc/52yHLm4n/Bathing_Drying.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 12,
+    "serviceName": "Dog Sitting",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Reliable and loving dog sitting service to ensure your pet feels safe while you're away.",
+    "image": "https://i.postimg.cc/7ZhC0NH9/Dog_Sitting.png",
+    "category": "Care"
+  },
+  {
+    "serviceId": 13,
+    "serviceName": "Hair Styling",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 30,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Professional hair styling and trimming to give your dog a neat and stylish look.",
+    "image": "https://i.postimg.cc/tC2Zscjv/Hair_Styling.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 14,
+    "serviceName": "Teeth Cleaning",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 2,
+    "description": "Thorough teeth cleaning to remove plaque and maintain your dog’s oral health.",
+    "image": "https://i.postimg.cc/15Jn8dQD/Teeth_Cleaning.png",
+    "category": "Dental"
+  },
+  {
+    "serviceId": 15,
+    "serviceName": "Nail Trimming",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 15,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Safe and precise nail trimming to prevent discomfort and injury.",
+    "image": "https://i.postimg.cc/7YmG5RkB/Nail_Trimming.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 16,
+    "serviceName": "Flea Treatment",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 45,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Effective flea treatment to protect your pet from itching and skin infections.",
+    "image": "https://i.postimg.cc/fRy3mvz7/Flea_Treatment.png",
+    "category": "Health"
+  },
+  {
+    "serviceId": 17,
+    "serviceName": "Dental Hygiene",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 30,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Routine dental hygiene service to keep your dog’s breath fresh and teeth healthy.",
+    "image": "https://i.postimg.cc/W1zDg7NS/Dental_Hygiene.png",
+    "category": "Dental"
+  },
+  {
+    "serviceId": 18,
+    "serviceName": "Paw Care",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 18,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Cleaning, moisturizing, and inspection of paws to prevent cracks and infections.",
+    "image": "https://i.postimg.cc/sDwQMLrT/Paw_Care.png",
+    "category": "Care"
+  },
+  {
+    "serviceId": 19,
+    "serviceName": "Fur Conditioning",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Deep fur conditioning treatment for a soft, shiny, and healthy coat.",
+    "image": "https://i.postimg.cc/TYCLKs67/Fur_Conditioning.png",
+    "category": "Grooming"
+  }
+]

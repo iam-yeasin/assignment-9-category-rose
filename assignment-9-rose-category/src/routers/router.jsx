@@ -6,6 +6,7 @@ import ProfilePage from "../pages/profilePage";
 import LogInPage from "../pages/LogInPage";
 import SignUpPage from "../pages/SignUpPage";
 import ForgotPassword from "../pages/ForgotPassword";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/service-details/:id",
+        element: <ServiceDetails />,
       },
     ],
   },
