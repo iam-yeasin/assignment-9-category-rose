@@ -19,7 +19,7 @@ const HomePage = () => {
 
       {/* Expert Vets Section */}
       <ExpertVets />
-      {/* Why Choose Us ection */}
+      {/* Why Choose Us Section */}
       <WhyChooseUs />
     </div>
   );

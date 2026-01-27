@@ -25,7 +25,7 @@
   },
   {
     "serviceId": 3,
-    "serviceName": "Heated Pet Boarding",
+    "serviceName": "Heated Cozy Pet Boarding",
     "providerName": "WarmPaws Care",
     "providerEmail": "contact@warmpaws.com",
     "price": 50,
@@ -37,7 +37,7 @@
   },
   {
     "serviceId": 4,
-    "serviceName": "Winter Vet Checkup",
+    "serviceName": "Winter Veterinarian Checkup",
     "providerName": "Healthy Tails Vet",
     "providerEmail": "support@healthytails.com",
     "price": 40,

@@ -18,7 +18,7 @@ const HeroSlider = () => {
     >
       <SwiperSlide>
         <div
-          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-center items-start px-16 text-left text-white font-semibold cursor-pointer"
+          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-start md:justify-center items-start px-16 pt-20 md:pt-0 text-left text-white font-semibold cursor-pointer"
           style={{
             background: "url('/slide1.png') center/cover no-repeat",
           }}
@@ -34,7 +34,7 @@ const HeroSlider = () => {
 
       <SwiperSlide>
         <div
-          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-center items-start px-16 text-left text-white font-semibold cursor-pointer"
+          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-start md:justify-center items-start px-16 pt-20 md:pt-0 text-left text-white font-semibold cursor-pointer"
           style={{
             background: "url('/slide2.png') center bottom /cover no-repeat",
           }}
@@ -50,7 +50,7 @@ const HeroSlider = () => {
 
       <SwiperSlide>
         <div
-          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-center items-start px-16 text-left text-white font-semibold cursor-pointer"
+          className="hero-slide w-11/12 mx-auto my-3 rounded-xl h-[800px] flex flex-col justify-start md:justify-center items-start px-16 pt-20 md:pt-0 text-left text-white font-semibold cursor-pointer"
           style={{
             background: "url('/slide3.png') center bottom /cover no-repeat",
           }}
