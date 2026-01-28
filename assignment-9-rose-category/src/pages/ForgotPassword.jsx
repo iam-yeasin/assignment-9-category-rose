@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { toast } from "react-hot-toast";
 
@@ -8,8 +8,17 @@ const ForgotPassword = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // email from login page (router state)
+  // email from login page (keep in box)
   const [email, setEmail] = useState(location.state?.email || "");
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        navigate("/", { replace: true });
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleResetPassword = () => {
     if (!email) {
@@ -20,10 +29,12 @@ const ForgotPassword = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         toast.success("Password reset email sent!");
-        navigate("/login");
+        // navigate("/login");
+        const gmailUrl = `https://mail.google.com/mail/u/0/#inbox`;
+        window.open(gmailUrl, "_blank");
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
+        // console.error(error);
         toast.error("Failed to send reset email");
       });
   };

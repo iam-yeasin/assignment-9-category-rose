@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -18,7 +19,7 @@ const LogInPage = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -41,14 +42,15 @@ const LogInPage = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log("Logged in:", result.user);
+        updateProfile(result.user);
+        // console.log("Logged in:", result.user);
         setSuccess(true);
         toast.success("Login Successful!");
         form.reset();
         navigate(location.state || "/");
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         setError(err.message);
         toast.error("Something went wrong please try again later!");
       });
@@ -57,13 +59,14 @@ const LogInPage = () => {
   const handleGoogleSignin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        console.log("Logged in:", result.user);
+        updateProfile(result.user);
+        // console.log("Logged in:", result.user);
         setSuccess(true);
         toast.success("Login Successful!");
         navigate(location.state || "/");
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         setError(err.message);
         toast.error("Something went wrong please try again later!");
       });

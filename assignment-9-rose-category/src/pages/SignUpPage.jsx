@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "./../firebase/firebase.config";
 import { FaEye } from "react-icons/fa";
@@ -27,22 +28,26 @@ const SignUpPage = () => {
 
   const handlesighup = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     const form = e.target;
     const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ name, photo, email, password });
+    // console.log({ name, photo, email, password });
 
     // ^.{6,}$
     // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/
     // const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-    const passwordPattern = /^.{6,}$/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
     if (!passwordPattern.test(password)) {
-      console.log("pass didn't match");
-      setError("Password must be at least 6 characters long");
-      toast.error("Password must be at least 6 characters long");
+      // console.log("pass didn't match");
+      setError(
+        "Use at least 6 characters with one uppercase and one lowercase letter.",
+      );
+      toast.error(
+        "Use at least 6 characters with one uppercase and one lowercase letter.",
+      );
       return;
     }
 
@@ -52,14 +57,18 @@ const SignUpPage = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        });
         setSuccess(true);
         e.target.reset();
         toast.success("Signup Sucessful");
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         setError(error.message);
         toast.error(error.message);
       });

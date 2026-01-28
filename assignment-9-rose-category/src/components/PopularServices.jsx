@@ -2,8 +2,15 @@ import React from "react";
 import servicesData from "../data/services.json";
 import { Link } from "react-router-dom";
 
+import AOS from "aos";
+import { useEffect } from "react";
+
 const PopularServices = () => {
   const popularServices = servicesData.slice(0, 6);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
 
   return (
     <section className="my-16 px-4">
@@ -15,6 +22,8 @@ const PopularServices = () => {
         {popularServices.map((service) => (
           <div
             key={service.serviceId}
+            data-aos="fade-up"
+            data-aos-delay="100"
             className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
           >
             <img

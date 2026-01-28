@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
 import { updateProfile, onAuthStateChanged } from "firebase/auth";
 import { toast } from "react-hot-toast";
-import { Navigate, useLocation } from "react-router";
+import { Navigate, useLocation } from "react-router-dom";
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

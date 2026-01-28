@@ -10,7 +10,11 @@ const ExpertVets = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-11/12 mx-auto cursor-pointer">
         {/* Vet 1 */}
-        <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-delay="100"
+          className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
+        >
           <img
             src="https://i.postimg.cc/8CYW8fyf/Dr_Emily_Carter.png"
             alt="Dr Emily Carter"
@@ -26,7 +30,11 @@ const ExpertVets = () => {
         </div>
 
         {/* Vet 2 */}
-        <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-delay="100"
+          className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
+        >
           <img
             src="https://i.postimg.cc/rpHW6Rhp/Dr_Sarah_Johnson.png"
             alt="Dr Sarah Johnson"
@@ -42,7 +50,11 @@ const ExpertVets = () => {
         </div>
 
         {/* Vet 3 */}
-        <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-delay="100"
+          className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
+        >
           <img
             src="https://i.postimg.cc/yNG9q3f9/Dr_Mark_Lee.png"
             alt="Dr Mark Lee"
@@ -58,7 +70,11 @@ const ExpertVets = () => {
         </div>
 
         {/* Vet 4 */}
-        <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-delay="100"
+          className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
+        >
           <img
             src="https://i.postimg.cc/3wqpM0LG/Dr_James_Wilson.png"
             alt="Dr James Wilson"

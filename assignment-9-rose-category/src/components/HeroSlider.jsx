@@ -2,10 +2,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useEffect } from "react";
 
 const HeroSlider = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Swiper
+      data-aos="fade-up"
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{

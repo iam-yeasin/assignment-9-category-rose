@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import serviceCategories from "../data/serviceCategories.json";
 import { Link } from "react-router-dom";
 
 const ServicesPage = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <section className="my-16 px-4">
       <h2 className="text-3xl font-bold text-center mb-20">Our All Services</h2>
@@ -10,6 +14,8 @@ const ServicesPage = () => {
         {serviceCategories.map((service) => (
           <div
             key={service.serviceId}
+            data-aos="fade-up"
+            data-aos-delay="100"
             className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
           >
             <img

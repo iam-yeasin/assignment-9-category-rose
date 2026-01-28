@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PrivacyPolicy from "./../pages/PrivacyPolicy";
 import {
   FaFacebookF,
   FaTwitter,
@@ -17,6 +18,16 @@ const Footer = () => {
             Providing loving and professional care for your pets. Your furry
             friends are our top priority.
           </p>
+          <ul>
+            <li className="mt-7">
+              <Link
+                to="/privacy-policy"
+                className="hover:text-white transition"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
         </div>
 
         {/* Quick Links */}

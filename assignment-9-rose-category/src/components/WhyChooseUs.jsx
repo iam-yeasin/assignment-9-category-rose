@@ -11,7 +11,11 @@ const WhyChooseUs = () => {
       <div className="bg-[#fffaee] py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 cursor-pointer">
           {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
+          >
             <div className="text-4xl mb-4">🐾</div>
             <h3 className="text-lg font-semibold mb-2">
               Experienced Professionals
@@ -22,7 +26,11 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
+          >
             <div className="text-4xl mb-4">⏰</div>
             <h3 className="text-lg font-semibold mb-2">24/7 Support</h3>
             <p className="text-gray-600 text-sm">
@@ -31,7 +39,11 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
+          >
             <div className="text-4xl mb-4">💊</div>
             <h3 className="text-lg font-semibold mb-2">Modern Equipment</h3>
             <p className="text-gray-600 text-sm">
@@ -40,7 +52,11 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
+          >
             <div className="text-4xl mb-4">🤝</div>
             <h3 className="text-lg font-semibold mb-2">
               Trusted by Pet Owners

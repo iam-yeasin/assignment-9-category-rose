@@ -1,4 +1,11 @@
+import AOS from "aos";
+import { useEffect } from "react";
+
 const WinterTips = () => {
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <section className="my-16 px-4">
       <div className="max-w-6xl mx-auto">
@@ -14,7 +21,11 @@ const WinterTips = () => {
 
         {/* cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 cursor-pointer">
-          <div className="bg-[#fffaee] rounded-xl shadow p-6 text-center">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="bg-[#fffaee] rounded-xl shadow p-6 text-center"
+          >
             <h3 className="font-semibold text-lg mb-2">Keep Them Warm</h3>
             <p className="text-gray-600 text-sm">
               Use winter clothing and limit outdoor exposure during extreme
@@ -22,21 +33,33 @@ const WinterTips = () => {
             </p>
           </div>
 
-          <div className="bg-[#fffaee] rounded-xl shadow p-6 text-center">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="bg-[#fffaee] rounded-xl shadow p-6 text-center"
+          >
             <h3 className="font-semibold text-lg mb-2">Protect Their Paws</h3>
             <p className="text-gray-600 text-sm">
               Apply paw balm regularly to prevent dryness and cracking.
             </p>
           </div>
 
-          <div className="bg-[#fffaee] rounded-xl shadow p-6 text-center">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="bg-[#fffaee] rounded-xl shadow p-6 text-center"
+          >
             <h3 className="font-semibold text-lg mb-2">Nutritious Diet</h3>
             <p className="text-gray-600 text-sm">
               Provide a healthy diet to maintain energy and body warmth.
             </p>
           </div>
 
-          <div className="bg-[#fffaee] rounded-xl shadow p-6 text-center">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="bg-[#fffaee] rounded-xl shadow p-6 text-center"
+          >
             <h3 className="font-semibold text-lg mb-2">Regular Grooming</h3>
             <p className="text-gray-600 text-sm">
               Keep fur clean and dry to avoid skin problems in winter.
