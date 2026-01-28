@@ -59,7 +59,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-10 mb-34">
+    <div className="max-w-md mx-auto mt-10 mb-30">
       <h1 className="text-2xl font-semibold mb-5 text-center">My Profile</h1>
 
       {/* Avatar */}
