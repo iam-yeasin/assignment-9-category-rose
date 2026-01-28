@@ -93,6 +93,8 @@ const ProfilePage = () => {
 
         <button className="btn btn-neutral w-full">Update Profile</button>
       </form>
+
+      <h2 className="text-2xl font-semibold mb-5 text-center mt-20">🐾🐾🐾</h2>
     </div>
   );
 };
