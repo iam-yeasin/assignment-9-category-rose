@@ -54,13 +54,13 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50"
             >
-              <li>
+              <li onClick={() => document.activeElement.blur()}>
                 <MyLink to={"/"}>Home</MyLink>
               </li>
-              <li>
+              <li onClick={() => document.activeElement.blur()}>
                 <MyLink to={"/services"}>Services</MyLink>
               </li>
-              <li>
+              <li onClick={() => document.activeElement.blur()}>
                 <MyLink to={"/profile"}>Profile</MyLink>
               </li>
             </ul>
