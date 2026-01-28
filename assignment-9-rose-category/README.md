@@ -1,16 +1,62 @@
-# React + Vite
+# WarmPaws – Winter Pet Care Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Project Purpose
 
-Currently, two official plugins are available:
+WarmPaws is a React-based web application designed to provide winter care services for pets. It allows users to browse services, view detailed information, and book services online, ensuring pets stay warm, healthy, and well-cared for during the winter season.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔗 Live URL
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[Warm Paws]  
+_(https://thewarmpaws.netlify.app/)_
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚡ Key Features
+
+- **Home Page**
+  - Hero slider with autoplay and pagination
+  - Popular winter care services section (limited to 6)
+  - Expert vets section
+  - Winter care tips section
+  - Extra informative sections for better UX
+
+- **Services Page**
+  - Displays all available winter care services
+  - Each service has image, title, price, rating, and "View Details" button
+
+- **Service Details Page**
+  - Shows full service details (price, rating, slots, provider info, description, image)
+  - Booking form integrated with React state and toast notifications
+  - Access control: only logged-in users can book services
+
+- **Authentication**
+  - Login, Signup, and Forget Password pages
+  - Firebase Authentication with Google login support
+  - Password validation (uppercase, lowercase, min 6 characters)
+
+- **Profile Page**
+  - Display user info
+  - Update profile (name and photo) using Firebase Auth
+
+- **Design & Animations**
+  - Responsive layout for desktop, tablet, and mobile
+  - TailwindCSS for clean, minimalist styling
+  - Swiper.js for sliders
+  - AOS animations for scroll effects
+  - Micro-interactions and hover effects on cards
+
+---
+
+## 🛠️ NPM Packages Used
+
+- `react` & `react-dom` – Core React library
+- `react-router` & `react-router-dom` – Routing and navigation
+- `firebase` – Authentication and backend integration
+- `react-hot-toast` – Toast notifications
+- `swiper` – Hero slider
+- `aos` – Scroll animations
+- `react-icons` – Icons for UI enhancements
+
+---
