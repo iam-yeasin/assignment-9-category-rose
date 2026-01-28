@@ -6,9 +6,7 @@ WarmPaws is a React-based web application designed to provide winter care servic
 ---
 
 ## 🔗 Live URL
-[Warm Paws]  
-
-*(https://thewarmpaws.netlify.app/)*
+[Warm Paws]  *(https://thewarmpaws.netlify.app/)*
 
 ---
 
@@ -56,6 +54,5 @@ WarmPaws is a React-based web application designed to provide winter care servic
 - `aos` – Scroll animations
 - `react-icons` – Icons for UI enhancements
 
----
 
-## 📁 Project Structure
+---
