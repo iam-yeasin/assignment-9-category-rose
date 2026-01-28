@@ -66,7 +66,6 @@ const SignUpPage = () => {
         e.target.reset();
         toast.success("Signup Sucessful");
         navigate(location.state || "/");
-        window.location.reload();
       })
       .catch((error) => {
         // console.log(error);

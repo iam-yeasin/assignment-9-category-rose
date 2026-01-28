@@ -126,6 +126,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-12 text-center text-gray-500 text-sm">
         © 2025 WarmPaws. All rights reserved.
+        {/* &copy; {new Date().getFullYear()} WarmPaws. All rights reserved. */}
       </div>
     </footer>
   );
